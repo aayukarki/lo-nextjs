@@ -89,16 +89,16 @@ export default function Success({ data }) {
                 </h2>
                 <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 pb-6">
                     {reviewsData.map((review, index) => (
-                        <div className="text-center md:text-left">
+                        <div key={index} className="text-center md:text-left">
                             <Image src={review.image} alt={`Review ${index + 1}`} />
                             <div className="flex items-center justify-center sm:justify-start">
                                 <div className="mr-3 text-6xl font-bold mt-2">{review.count}</div>
                                 <div>
                                     <div className="font-bold uppercase">5 star reviews</div>
                                     <div className="flex items-center text-amber-400">
-                                        {Array.from({ length: 5 }).map((_, index) => (
+                                        {Array.from({ length: 5 }).map((_, starIndex) => (
                                             <svg
-                                                key={index}
+                                                key={starIndex}
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24"
                                                 fill="currentColor"

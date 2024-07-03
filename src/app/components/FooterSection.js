@@ -44,9 +44,9 @@ export default function FooterSection() {
                     </div>
                     <div className="w-fit order-1 md:order-2">
                         <div className="flex gap-x-3">
-                            {socialsData.map((social) => (
-                                <div>
-                                    <a href={social.link.replace(/'/g, "&apos;").replace(/"/g, "&quot;")} target="_blank" className="flex items-center justify-center w-10 h-10 border border-gray-800 hover:bg-secondary transition-all rounded-full">
+                            {socialsData.map((social, index) => (
+                                <div key={index}>
+                                    <a href={social.link} target="_blank" className="flex items-center justify-center w-10 h-10 border border-gray-800 hover:bg-secondary transition-all rounded-full">
                                         <Image src={social.image} alt="socialimg" />
                                     </a>
                                 </div>
