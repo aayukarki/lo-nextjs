@@ -11,14 +11,14 @@ export default function LeftTextWithImage() {
                     <div className="xl:w-1/2">
                         <article className="text-white relative">
                             <h2 className="text-5xl md:text-8xl font-extrabold leading-none mb-5 md:mb-12">
-                                Kia Ora! We're Coming To NZ
+                                Kia Ora! We&apos;re Coming To NZ
                                 <span className="text-secondary">.</span>
                             </h2>
                             <article className="pt-5 xl:pt-7">
-                                <p className="text-2xl md:text-4xl font-extrabold mb-8">We’re bringing our <span class="text-lightpurple">AI</span> to <span class="text-lightpurple">NZ</span>.</p>
+                                <p className="text-2xl md:text-4xl font-extrabold mb-8">We&apos;re bringing our <span class="text-lightpurple">AI</span> to <span class="text-lightpurple">NZ</span>.</p>
                                 <div className="text-lg md:text-xl font-bold">
                                     <p>
-                                        We're thrilled to announce our arrival in New Zealand, and we're excited to introduce our cutting-edge AI technology to the Kiwi community. Stay tuned for innovative solutions and personalized AI experiences as we embark on this exciting journey to New Zealand.
+                                        We&apos;re thrilled to announce our arrival in New Zealand, and we&apos;re excited to introduce our cutting-edge AI technology to the Kiwi community. Stay tuned for innovative solutions and personalized AI experiences as we embark on this exciting journey to New Zealand.
                                     </p>
                                 </div>
                             </article>

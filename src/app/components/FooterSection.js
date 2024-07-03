@@ -27,7 +27,7 @@ export default function FooterSection() {
                             More Options, More You
                             <span className="text-secondary rounded-full">.</span>
                         </p>
-                        <p className="text-xl font-bold">New Zealand’s first artificial intelligence loan marketplace for all types of loans</p>
+                        <p className="text-xl font-bold">New Zealand&apos;s first artificial intelligence loan marketplace for all types of loans</p>
                     </div>
                     <div className="w-fit xl:w-auto mt-4 xl:mt-0">
                         <a
@@ -46,7 +46,7 @@ export default function FooterSection() {
                         <div className="flex gap-x-3">
                             {socialsData.map((social) => (
                                 <div>
-                                    <a href={social.link} target="_blank" className="flex items-center justify-center w-10 h-10 border border-gray-800 hover:bg-secondary transition-all rounded-full">
+                                    <a href={social.link.replace(/'/g, "&apos;").replace(/"/g, "&quot;")} target="_blank" className="flex items-center justify-center w-10 h-10 border border-gray-800 hover:bg-secondary transition-all rounded-full">
                                         <Image src={social.image} alt="socialimg" />
                                     </a>
                                 </div>
@@ -57,9 +57,9 @@ export default function FooterSection() {
                 <div className="flex flex-wrap justify-between items-center -mx-4">
                     <div className="md:w-2/3 px-4">
                         <div className="text-xs leading-loose font-bold">
-                            <p>"All applications are subject to the credit providers credit assessment and loan eligibility criteria. Terms, conditions, fees and charges apply. Information provided is factual information only, and is not intended to imply any recommendation about any financial product(s) or constitute tax advice. If you require financial or tax advice you should consult a licensed financial or tax adviser.</p>
-                            <p>*Your interest rate may be different and is based on a number of factors, including your credit history, the information you provide and our assessment of your application. We'll confirm your interest rate upon submission of your application. Rates, repayments and fees are estimates and are subject to change at any time.Turnaround Time is based on average approval time for personal and car loans between 1 August 2023 - 1 September 2023.</p>
-                            <p>*The comparison rate is based on a $30,000 secured loan over 5 years. WARNING: This comparison rate applies only to the example or examples given. Different amounts and terms will result in different comparison rates. Costs such as redraw fees or early repayment fees, and cost savings such as fee waivers, are not included in the comparison rate but may influence the cost of the loan. Eligibility criteria, terms and conditions apply."</p>
+                            <p>&quot;All applications are subject to the credit providers credit assessment and loan eligibility criteria. Terms, conditions, fees and charges apply. Information provided is factual information only, and is not intended to imply any recommendation about any financial product(s) or constitute tax advice. If you require financial or tax advice you should consult a licensed financial or tax adviser.</p>
+                            <p>*Your interest rate may be different and is based on a number of factors, including your credit history, the information you provide and our assessment of your application. We&apos;ll confirm your interest rate upon submission of your application. Rates, repayments and fees are estimates and are subject to change at any time.Turnaround Time is based on average approval time for personal and car loans between 1 August 2023 - 1 September 2023.</p>
+                            <p>*The comparison rate is based on a $30,000 secured loan over 5 years. WARNING: This comparison rate applies only to the example or examples given. Different amounts and terms will result in different comparison rates. Costs such as redraw fees or early repayment fees, and cost savings such as fee waivers, are not included in the comparison rate but may influence the cost of the loan. Eligibility criteria, terms and conditions apply.&quot;</p>
                         </div>
                     </div>
                     <div className="md:w-1/3 px-4">

@@ -302,7 +302,7 @@ export default function Hero() {
                                 {step === 4 && (
                                     <>
                                         <div className="flex justify-between items-center my-6">
-                                            <p className="text-2xl md:text-4xl font-bold mb-0">What's your preferred loan term?</p>
+                                            <p className="text-2xl md:text-4xl font-bold mb-0">What&apos;s your preferred loan term?</p>
                                             <button
                                                 onClick={prevStep}
                                                 className="bg-primary/10 hover:bg-primary/30 py-2 px-3 rounded-full"

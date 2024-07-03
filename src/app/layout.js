@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="au">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/dns8eeo.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
