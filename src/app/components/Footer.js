@@ -19,7 +19,9 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
-                        <Image src={aiims} alt="footerimg" />
+                        <a href="https://www.aiims.com.au/like-our-work/" target="_blank" rel="home">
+                            <Image src={aiims} alt="footerimg" />
+                        </a>
                     </div>
                 </div>
             </div>
