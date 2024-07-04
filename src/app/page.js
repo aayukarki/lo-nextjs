@@ -1,9 +1,5 @@
 "use client";
 
-// Import slick-carousel css files
-import "../../node_modules/slick-carousel/slick/slick.css";
-import "../../node_modules/slick-carousel/slick/slick-theme.css";
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Awards from "./components/Awards";
@@ -12,6 +8,7 @@ import LeftTextWithImage from "./components/LeftTextWithImage";
 import CenterTextWithImage from "./components/CenterTextWithImage";
 import Footer from "./components/Footer";
 import FooterSection from "./components/FooterSection";
+
 
 export default function Home() {
   return (

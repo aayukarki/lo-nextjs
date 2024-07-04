@@ -1,5 +1,9 @@
 import "./globals.css";
 
+// Import slick-carousel css files
+import "../../node_modules/slick-carousel/slick/slick.css";
+import "../../node_modules/slick-carousel/slick/slick-theme.css";
+
 export const metadata = {
   title: "Compare Loans Online | Find The Best Rates & Apply Online | LoanOptions.ai",
   description: "Compare Loans With Loan Options. Over 60 Lenders Australia Wide. Apply Online Now & Find The Best Rate Using Powerful Data & AI Matching Technology.",
