@@ -51,7 +51,7 @@ const settings = {
 const slides = [
     {
         image: award1,
-        title: " Broker of the year (asset Finance) 2023",
+        title: "Broker of the year (asset Finance) 2023",
         description: "WeMoney",
     },
     {

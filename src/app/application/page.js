@@ -1,109 +1,64 @@
 "use client";
 
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 const Application = () => {
     useEffect(() => {
         const handleMessage = (event) => {
-            if (event.origin !== "https://seashell-app-34mr3.ondigitalocean.app") {
-                return;
-            }
+            const { origin, data } = event;
+            if (origin !== "https://clownfish-app-4s6r5.ondigitalocean.app") return;
 
-            if (event.data === "goBack") {
-                window.location.href = "./";
-            }
-
-            //   if (event.data && event.data.type === "GA_EVENT") {
-            //     window.gtag("event", event.data.eventAction, event.data.params);
-            //   }
-
-            if (event.data && event.data.type === "REDIRECT") {
-                window.location.href = event.data.url;
+            switch (data.type) {
+                case "goBack":
+                    window.location.href = "/";
+                    break;
+                case "GA_EVENT":
+                    window.gtag("event", data.eventAction, data.params);
+                    break;
+                case "REDIRECT":
+                    window.location.href = data.url;
+                    break;
+                default:
+                    break;
             }
         };
 
         window.addEventListener("message", handleMessage);
-
-        // Cleanup event listener on component unmount
-        return () => {
-            window.removeEventListener("message", handleMessage);
-        };
+        return () => window.removeEventListener("message", handleMessage);
     }, []);
 
     useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
         let v2Data = localStorage.getItem("quote");
-        let gclId = localStorage.getItem("gclid");
-        let countryCode = localStorage.getItem("countryCode");
-        let fbclId = localStorage.getItem("fbclid");
-        let src;
+        const gclId = localStorage.getItem("gclid");
+        const fbclId = localStorage.getItem("fbclid");
+
+        let data;
+        let entryUrl = urlParams.get("entry_url") || "https://www.loanoptions.co.nz";
 
         if (!v2Data) {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            let data = urlParams.get("data");
-
-            console.log(urlParams.get("data"));
-
-            if (data) {
-                let entry_url = urlParams.get("entry_url");
-                src = `https://seashell-app-34mr3.ondigitalocean.app/?data=${data}&entry_url=${entry_url}&quote_id=`;
-            } else {
-                data = {
+            data = urlParams.get("data")
+                ? { data: urlParams.get("data"), entry_url: entryUrl }
+                : {
                     type: urlParams.get("loan_type") || "CAR_LOAN",
                     amount: urlParams.get("loan_amount") || 10000,
                     term: urlParams.get("loan_term") || 5,
                     usage: urlParams.get("loan_usage") || "CONSUMER",
                     externalPartnerId: urlParams.get("partnerId") || 1960,
                     source: urlParams.get("source") || "loanoptions",
-                    sourceUrl: urlParams.get("sourceUrl") || "https://loanoptions.ai",
+                    sourceUrl: urlParams.get("sourceUrl") || entryUrl,
                     targetSystem: urlParams.get("targetSystem") || "SKYNET",
+                    targetSystem: urlParams.get("countryCode") || "NZ",
                 };
-                let entry_url = urlParams.get("entry_url") || "https://loanoptions.ai";
-                src = `https://seashell-app-34mr3.ondigitalocean.app/?data=${JSON.stringify(
-                    data
-                )}&entry_url=${entry_url}&quote_id=`;
-            }
         } else {
-            if (countryCode === "NZ") {
-                v2Data = JSON.parse(v2Data);
-                v2Data.countryCode = countryCode;
-                v2Data = JSON.stringify(v2Data);
-
-                if (gclId) {
-                    v2Data = JSON.parse(v2Data);
-                    v2Data.gclId = gclId;
-                    v2Data = JSON.stringify(v2Data);
-                }
-
-                if (fbclId) {
-                    v2Data = JSON.parse(v2Data);
-                    v2Data.fbclId = fbclId;
-                    v2Data = JSON.stringify(v2Data);
-                }
-
-                v2Data = encodeURIComponent(v2Data);
-                src = `https://seashell-app-34mr3.ondigitalocean.app/?data=${v2Data}&entry_url=https://loanoptions.ai/nz&quote_id=`;
-            } else {
-                if (gclId) {
-                    v2Data = JSON.parse(v2Data);
-                    v2Data.gclId = gclId;
-                    v2Data = JSON.stringify(v2Data);
-                }
-
-                if (fbclId) {
-                    v2Data = JSON.parse(v2Data);
-                    v2Data.fbclId = fbclId;
-                    v2Data = JSON.stringify(v2Data);
-                }
-
-                v2Data = encodeURIComponent(v2Data);
-                src = `https://seashell-app-34mr3.ondigitalocean.app/?data=${v2Data}&entry_url=https://loanoptions.ai&quote_id=`;
-            }
+            v2Data = JSON.parse(v2Data);
+            if (gclId) v2Data.gclId = gclId;
+            if (fbclId) v2Data.fbclId = fbclId;
+            data = encodeURIComponent(JSON.stringify(v2Data));
         }
 
-        const iframe = document.getElementById("myIframe");
-        iframe.src = src;
+        const src = `https://clownfish-app-4s6r5.ondigitalocean.app/?data=${data || JSON.stringify(data)}&entry_url=${entryUrl}&quote_id=`;
+        document.getElementById("myIframe").src = src;
     }, []);
 
     return (

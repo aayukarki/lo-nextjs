@@ -1,6 +1,7 @@
 
 "use client";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation"; // Import useRouter hook
 import Image from "next/image";
 
 // images
@@ -12,7 +13,6 @@ import personal from "../../../public/w3.png";
 import business from "../../../public/w4.png";
 
 export default function Hero() {
-
     // State management for the multi-step form
     const [step, setStep] = useState(1);
 
@@ -22,10 +22,34 @@ export default function Hero() {
         amount: 50000,
         term: 5,
         countryCode: "NZ",
-        sourceUrl: "https://loanoptions.ai",
+        source: "GothamTechNz",
+        sourceUrl: "https://www.loanoptions.co.nz",
         targetSystem: "SKYNET",
         externalPartnerId: "1960",
+        gclid: "",
+        fbclid: "",
     });
+
+    const searchParams = useSearchParams(); // Initialize useSearchParams
+
+    useEffect(() => {
+        // Get the full search string and split it by the '?' character
+        const searchString = window.location.search.toLowerCase().slice(1).split('?').join('&');
+        const params = new URLSearchParams(searchString);
+
+        // Extract the necessary parameters
+        const partnerId = params.get('partnerid');
+        const gclid = params.get('gclid');
+        const fbclid = params.get('fbclid');
+
+        // Update the quote state with the extracted parameters
+        setQuote((prevQuote) => ({
+            ...prevQuote,
+            externalPartnerId: partnerId || prevQuote.externalPartnerId,
+            gclid: gclid || prevQuote.gclid,
+            fbclid: fbclid || prevQuote.fbclid,
+        }));
+    }, [searchParams]);
 
     useEffect(() => {
         localStorage.setItem("quote", JSON.stringify(quote));
@@ -48,6 +72,7 @@ export default function Hero() {
             window.location.href = "/application";
         }
     };
+
     return (
         <section className="bg-gradient-to-b from-primary to-[#5614BB] text-white py-12 overflow-hidden">
             <div className="container">
@@ -102,6 +127,7 @@ export default function Hero() {
                                                 <button
                                                     onClick={() => {
                                                         updateQuote("type", "EQUIPMENT_LOAN");
+                                                        updateQuote("usage", "COMMERCIAL_FULL_DOC");
                                                         setStep(3);
                                                     }}
                                                     className="w-full group text-center pt-3 md:pt-5 rounded-xl bg-opacity-25 hover:bg-opacity-100 hover:scale-105 transition-all duration-500 bg-lightpurple text-primary"
@@ -144,6 +170,7 @@ export default function Hero() {
                                                 <button
                                                     onClick={() => {
                                                         updateQuote("type", "BUSINESS_LOAN");
+                                                        updateQuote("usage", "COMMERCIAL_FULL_DOC");
                                                         setStep(3);
                                                     }}
                                                     className="w-full group text-center pt-3 md:pt-5 rounded-xl bg-opacity-25 hover:bg-opacity-100 hover:scale-105 transition-all duration-500 bg-lightpurple text-primary"
@@ -216,7 +243,7 @@ export default function Hero() {
                                             <div className="w-1/2 md:w-1/4 p-2">
                                                 <button
                                                     onClick={() => {
-                                                        updateQuote("usage", "COMMERCIAL");
+                                                        updateQuote("usage", "COMMERCIAL_FULL_DOC");
                                                         nextStep();
                                                     }}
                                                     className="w-full group text-center pt-3 md:pt-5 rounded-xl bg-opacity-25 hover:bg-opacity-100 hover:scale-105 transition-all duration-500 bg-lightpurple text-primary"

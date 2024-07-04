@@ -1,6 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Awards from "./components/Awards";
