@@ -1,4 +1,9 @@
 "use client";
+
+// Import slick-carousel css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Awards from "./components/Awards";

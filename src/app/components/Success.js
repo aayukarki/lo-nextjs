@@ -4,10 +4,6 @@ import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
 
-// Import slick-carousel css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 // Images
 import ms1 from "../../../public/ms1.png";
 import ms2 from "../../../public/ms2.png";
