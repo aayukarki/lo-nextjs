@@ -6,7 +6,7 @@ const Application = () => {
     useEffect(() => {
         const handleMessage = (event) => {
             const { origin, data } = event;
-            if (origin !== "https://clownfish-app-4s6r5.ondigitalocean.app") return;
+            if (origin !== "https://seashell-app-34mr3.ondigitalocean.app") return;
 
             switch (data.type) {
                 case "goBack":
@@ -57,7 +57,7 @@ const Application = () => {
             data = encodeURIComponent(JSON.stringify(v2Data));
         }
 
-        const src = `https://clownfish-app-4s6r5.ondigitalocean.app/?data=${data || JSON.stringify(data)}&entry_url=${entryUrl}&quote_id=`;
+        const src = `https://seashell-app-34mr3.ondigitalocean.app/?data=${data || JSON.stringify(data)}&entry_url=${entryUrl}&quote_id=`;
         document.getElementById("myIframe").src = src;
     }, []);
 
