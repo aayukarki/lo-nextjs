@@ -27,18 +27,18 @@ export default function RootLayout({ children }) {
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-KMWSHRWV');
+              })(window,document,'script','dataLayer','GTM-MK7PWSK5');
             `,
           }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-45GS70EWZJ"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7N2ZFP1ZT"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-45GS70EWZJ');
+              gtag('config', 'G-X7N2ZFP1ZT');
             `,
           }}
         />
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
       <body>
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KMWSHRWV"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MK7PWSK5"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
