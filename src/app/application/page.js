@@ -44,7 +44,7 @@ const Application = () => {
                     amount: urlParams.get("loan_amount") || 10000,
                     term: urlParams.get("loan_term") || 5,
                     usage: urlParams.get("loan_usage") || "CONSUMER",
-                    externalPartnerId: urlParams.get("partnerId") || 1960,
+                    externalPartnerId: urlParams.get("partnerId") || 2722,
                     source: urlParams.get("source") || "loanoptions",
                     sourceUrl: urlParams.get("sourceUrl") || entryUrl,
                     targetSystem: urlParams.get("targetSystem") || "SKYNET",

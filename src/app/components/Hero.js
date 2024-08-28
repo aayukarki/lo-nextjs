@@ -346,7 +346,7 @@ export default function Hero() {
         source: "GothamTechNz",
         sourceUrl: "https://www.loanoptions.co.nz",
         targetSystem: "SKYNET",
-        externalPartnerId: "1960",
+        externalPartnerId: "2722",
         gclid: "",
         fbclid: "",
     });
