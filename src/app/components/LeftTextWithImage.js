@@ -5,7 +5,7 @@ import globe from "../../../public/globe.png";
 
 export default function LeftTextWithImage() {
     return (
-        <section className="bg-[#161529] relative z-1 overflow-hidden pt-10 lg:pt-20 xl:py-32">
+        <section className="bg-[#161529] relative z-1 overflow-hidden pt-10 md:pt-20 xl:py-32">
             <div className="container">
                 <div className="row">
                     <div className="xl:w-1/2">

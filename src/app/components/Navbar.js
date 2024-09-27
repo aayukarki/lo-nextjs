@@ -4,71 +4,36 @@ import Image from "next/image";
 
 //images
 import logo from "../../../public/whitelogo.svg";
-import awardimg from "../../../public/award.svg";
-import star from "../../../public/star.svg";
+import news from "../../../public/7news.png";
 import phone from "../../../public/phone.svg";
 
 export default function Navbar() {
     return (
         <header className="sticky top-0 z-20 bg-primary text-white py-3 xl:py-4 px-4 md:px-5">
-            <div className="flex flex-wrap xl:flex-nowrap justify-center xl:justify-between items-center">
-                <Link
-                    href="./"
-                >
-                    {logo && (
-                        <Image
-                            src={logo}
-                            alt="logo"
-                            className=""
-                            width={191}
-                            height={26}
-                            loading="eager"
-                        />
-                    )}
-                </Link>
+            <div className="flex flex-wrap xl:flex-nowrap justify-center lg:justify-end items-center gap-y-4">
                 <div className="flex items-center">
                     <Link
                         href="#"
-                        className="hidden lg:flex items-center gap-3 font-semibold border-r border-r-light py-2 px-2 md:px-4 xl:px-7"
-                    >
-                        <div className="relative">
-                            {awardimg && (
-                                <Image
-                                    src={awardimg}
-                                    alt="award"
-                                    className=""
-                                    width={16}
-                                    height={16}
-                                    loading="eager"
-                                />
-                            )}
-                            <span className="h-[4px] w-[4px] bg-red-600 inline absolute top-0 end-0 rounded-full"></span>
-                        </div>
-                        <span>Award-Winning Business</span>
-                    </Link>
-                    <Link
-                        href="#"
                         target="_blank"
-                        className="hidden md:flex items-center gap-3 font-semibold border-r border-r-light py-2 px-2 md:px-4 xl:px-7"
+                        className="hidden md:flex items-center gap-3 font-semibold py-2 px-2 md:px-4 xl:px-7"
                     >
+                        <span className="text-gray-300">As seen on</span>
                         <div className="relative">
-                            {star && (
+                            {news && (
                                 <Image
-                                    src={star}
-                                    alt="star"
+                                    src={news}
+                                    alt="news"
                                     className=""
-                                    width={16}
-                                    height={16}
+                                    width={94}
+                                    height={24}
                                     loading="eager"
                                 />
                             )}
-                            <span className="h-[4px] w-[4px] bg-red-600 inline absolute top-0 end-0 rounded-full"></span>
                         </div>
-                        <span>788 Google Reviews</span>
                     </Link>
                     <Link
                         href="tel:0800 467 006"
-                        className="group flex flex-none items-center gap-3 font-semibold border-r border-r-light py-2 px-2 md:px-4 xl:px-7"
+                        className="group flex flex-none items-center gap-3 font-semibold py-2 px-2 md:px-4 xl:px-7"
                     >
                         <div className="relative">
                             {phone && (

@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="container">
                 <div className="grid justify-center items-center lg:justify-between">
                     <div className="flex flex-col md:flex-row justify-center items-center font-bold text-xs md:text-sm gap-y-3">
-                        <div className="flex text-center justify-center items-center gap-x-3 md:gap-x-4 md:mr-4">
+                        <div className="flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-3 md:gap-4 md:mr-4">
                             Copyright {new Date().getFullYear()} <span>|</span> LoanOptions.ai{" "}
                             <span>|</span> All Rights Reserved{" "}
                             <span className="hidden md:inline-block">|</span>

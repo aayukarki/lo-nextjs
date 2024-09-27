@@ -86,7 +86,7 @@ export default function Success({ data }) {
                 <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 pb-6">
                     {reviewsData.map((review, index) => (
                         <div key={index} className="text-center md:text-left">
-                            <Image src={review.image} alt={`Review ${index + 1}`} />
+                            <Image src={review.image} alt={`Review ${index + 1}`} className="inline-block" />
                             <div className="flex items-center justify-center sm:justify-start">
                                 <div className="mr-3 text-6xl font-bold mt-2">{review.count}</div>
                                 <div>
