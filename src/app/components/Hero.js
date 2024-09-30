@@ -202,7 +202,7 @@ function HeroContent({ quote, setQuote, step, setStep, nextStep, prevStep, updat
                                             loading="eager"
                                         />
                                     )}
-                                    <p className="font-bold mt-6">Consumer</p>
+                                    <p className="font-bold mt-6">Personal</p>
                                 </button>
                             </div>
                             <div className="w-1/2 md:w-1/3 p-2">
@@ -223,7 +223,7 @@ function HeroContent({ quote, setQuote, step, setStep, nextStep, prevStep, updat
                                             loading="eager"
                                         />
                                     )}
-                                    <p className="font-bold mt-6">Commercial</p>
+                                    <p className="font-bold mt-6">Business</p>
                                 </button>
                             </div>
                         </div>
@@ -418,7 +418,7 @@ export default function Hero() {
                         </div>
                         <div className="w-full lg:w-1/2 order-1 lg:order-2">
                             <h1 className="font-extrabold text-5xl md:text-7xl 3xl:text-8xl leading-none mb-6 text-center lg:text-left">More Options. More You.</h1>
-                            <p className="font-extrabold text-3xl xl:text-4xl 3xl:text-5xl text-center lg:text-left">Compare Loans Online <span class="font-caveat uppercase font-normal text-lightpurple">Even faster</span></p>
+                            <p className="font-extrabold text-3xl xl:text-4xl 3xl:text-5xl text-center lg:text-left">Compare Loans Online <span class="font-lumios uppercase font-normal text-lightpurple">Even faster</span></p>
                             <p className="text-lightpurple 3xl:text-lg font-extrabold mb-12 text-center lg:text-left">Compare realistic loan options with powerful data & AI matching technology</p>
                             <Slider className="mb-12 !hidden lg:!inline-flex" {...settings}>
                                 {Array.from({ length: 26 }, (_, index) => (
@@ -427,9 +427,10 @@ export default function Hero() {
                                             <Image
                                                 src={`/award${index + 1}.png`} // Pull images based on their dynamic names
                                                 alt={`Award ${index + 1}`}
-                                                width={80}    // Provide default width
-                                                height={81}   // Provide default height
-                                                layout="responsive"
+                                                width={81} // Use a dummy value for width since Next.js requires it
+                                                height={81} // Fixed height
+                                                style={{ width: 'auto', height: '81px', objectFit: 'contain' }} // Maintain original width with fixed height
+                                                unoptimized // Prevents Next.js from optimizing the image
                                             />
                                         </div>
                                     </div>
@@ -545,9 +546,10 @@ export default function Hero() {
                             <Image
                                 src={`/award${index + 1}.png`} // Pull images based on their dynamic names
                                 alt={`Award ${index + 1}`}
-                                width={120}    // Provide default width
-                                height={81}   // Provide default height
-                                layout="responsive"
+                                width={81} // Use a dummy value for width since Next.js requires it
+                                height={81} // Fixed height
+                                style={{ width: 'auto', height: '81px', objectFit: 'contain' }} // Maintain original width with fixed height
+                                unoptimized // Prevents Next.js from optimizing the image
                             />
                         </div>
                     </div>

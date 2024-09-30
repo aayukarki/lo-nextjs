@@ -22,7 +22,7 @@ module.exports = {
       fontFamily: {
         'articulat': ["articulat-cf", "sans-serif"],
         'articulat-heavy': ["articulat-heavy-cf", "sans-serif"],
-        'caveat': ["Caveat Brush", "cursive"],
+        'lumios': ["lumios-brush", "sans-serif"],
       },
       colors: {
         transparent: 'transparent',

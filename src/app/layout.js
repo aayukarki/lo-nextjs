@@ -20,10 +20,8 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/dns8eeo.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap"
-          rel="stylesheet"
-        ></link>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://use.typekit.net/sit6xju.css"></link>
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -2,6 +2,7 @@
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import News from "./components/News";
 import Awards from "./components/Awards";
 import Success from "./components/Success";
 import LeftTextWithImage from "./components/LeftTextWithImage";
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <News />
       <Success />
       <LeftTextWithImage />
       <CenterTextWithImage />
